@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
     return (
         <html lang="ko" className={`${inter.variable} ${outfit.variable}`}>
             <body className="font-sans antialiased">
+                <ScrollProgress />
                 {children}
             </body>
         </html>
