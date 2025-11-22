@@ -70,26 +70,26 @@ export default function Testimonials() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -100 }}
                                 transition={{ duration: 0.5 }}
-                                className="glass-strong p-12 rounded-3xl"
+                                className="glass-strong p-6 md:p-12 rounded-3xl"
                             >
                                 {/* Stars */}
-                                <div className="flex justify-center gap-1 mb-6">
+                                <div className="flex justify-center gap-1 mb-4 md:mb-6">
                                     {[...Array(current.rating)].map((_, i) => (
-                                        <Star key={i} className="w-6 h-6 fill-yellow-500 text-yellow-500" />
+                                        <Star key={i} className="w-5 h-5 md:w-6 md:h-6 fill-yellow-500 text-yellow-500" />
                                     ))}
                                 </div>
 
                                 {/* Content */}
-                                <p className="text-xl text-white text-center mb-8 leading-relaxed italic">
+                                <p className="text-base md:text-xl text-white text-center mb-6 md:mb-8 leading-relaxed italic px-2">
                                     "{current.content}"
                                 </p>
 
                                 {/* Author */}
-                                <div className="flex items-center justify-center gap-4">
-                                    <div className="text-5xl">{current.image}</div>
+                                <div className="flex items-center justify-center gap-3 md:gap-4">
+                                    <div className="text-4xl md:text-5xl">{current.image}</div>
                                     <div>
-                                        <div className="font-bold text-white">{current.name}</div>
-                                        <div className="text-sm text-muted-foreground">
+                                        <div className="font-bold text-white text-sm md:text-base">{current.name}</div>
+                                        <div className="text-xs md:text-sm text-muted-foreground">
                                             {current.role} • {current.company}
                                         </div>
                                     </div>
@@ -98,13 +98,13 @@ export default function Testimonials() {
                         </AnimatePresence>
 
                         {/* Navigation */}
-                        <div className="flex justify-center gap-4 mt-8">
+                        <div className="flex justify-center gap-3 md:gap-4 mt-6 md:mt-8">
                             <button
                                 onClick={prev}
-                                className="w-12 h-12 rounded-full glass hover:bg-white/10 flex items-center justify-center transition-colors"
+                                className="w-10 h-10 md:w-12 md:h-12 rounded-full glass hover:bg-white/10 flex items-center justify-center transition-colors"
                                 aria-label="Previous testimonial"
                             >
-                                <ChevronLeft className="w-6 h-6 text-white" />
+                                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
                             </button>
 
                             {/* Dots */}
@@ -114,8 +114,8 @@ export default function Testimonials() {
                                         key={i}
                                         onClick={() => setCurrentIndex(i)}
                                         className={`w-2 h-2 rounded-full transition-all ${i === currentIndex
-                                                ? "w-8 bg-blue-500"
-                                                : "bg-white/30 hover:bg-white/50"
+                                            ? "w-6 md:w-8 bg-blue-500"
+                                            : "bg-white/30 hover:bg-white/50"
                                             }`}
                                         aria-label={`Go to testimonial ${i + 1}`}
                                     />
@@ -124,10 +124,10 @@ export default function Testimonials() {
 
                             <button
                                 onClick={next}
-                                className="w-12 h-12 rounded-full glass hover:bg-white/10 flex items-center justify-center transition-colors"
+                                className="w-10 h-10 md:w-12 md:h-12 rounded-full glass hover:bg-white/10 flex items-center justify-center transition-colors"
                                 aria-label="Next testimonial"
                             >
-                                <ChevronRight className="w-6 h-6 text-white" />
+                                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
                             </button>
                         </div>
                     </div>

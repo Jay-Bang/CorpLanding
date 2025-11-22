@@ -42,7 +42,7 @@ export default function Stats() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section ref={ref} className="py-24 px-4 relative overflow-hidden">
+        <section ref={ref} className="py-16 md:py-24 px-4 relative overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-purple-900/10 to-pink-900/10" />
 
@@ -52,17 +52,17 @@ export default function Stats() {
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
             >
-                <motion.div variants={fadeIn} className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+                <motion.div variants={fadeIn} className="text-center mb-12 md:mb-16">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
                         <span className="text-white">숫자로 보는</span>{" "}
                         <span className="text-gradient">우리의 성과</span>
                     </h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                         데이터가 증명하는 확실한 성과와 신뢰
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     {stats.map((stat, index) => {
                         const Icon = stat.icon;
                         return (
@@ -90,15 +90,15 @@ function StatCard({ stat, Icon, isInView, delay }: any) {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.5, delay }}
-            className="glass-strong p-8 rounded-2xl text-center group hover:scale-105 transition-transform duration-300"
+            className="glass-strong p-6 md:p-8 rounded-2xl text-center group hover:scale-105 transition-transform duration-300"
         >
-            <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${stat.color} p-4 group-hover:animate-pulse-glow`}>
+            <div className={`w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl bg-gradient-to-br ${stat.color} p-3 md:p-4 group-hover:animate-pulse-glow`}>
                 <Icon className="w-full h-full text-white" />
             </div>
-            <div className="text-5xl font-bold text-gradient mb-2">
+            <div className="text-3xl md:text-5xl font-bold text-gradient mb-2">
                 {counter.count.toLocaleString()}{stat.suffix}
             </div>
-            <div className="text-muted-foreground">{stat.label}</div>
+            <div className="text-sm md:text-base text-muted-foreground">{stat.label}</div>
         </motion.div>
     );
 }

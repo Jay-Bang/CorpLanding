@@ -26,7 +26,7 @@ export default function Hero() {
 
                 <motion.h1
                     variants={slideUp}
-                    className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-tight"
+                    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-tight px-4"
                 >
                     <span className="text-gradient">미래를 만드는</span>
                     <br />
@@ -35,7 +35,7 @@ export default function Hero() {
 
                 <motion.p
                     variants={fadeIn}
-                    className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
+                    className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 md:mb-12 px-4"
                 >
                     혁신적인 기술과 창의적인 아이디어로 비즈니스의 새로운 가능성을 열어갑니다.
                     당신의 성공이 우리의 목표입니다.
@@ -43,14 +43,14 @@ export default function Hero() {
 
                 <motion.div
                     variants={fadeIn}
-                    className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                    className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4"
                 >
-                    <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
+                    <button className="w-full sm:w-auto group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
                         <span className="relative z-10">시작하기</span>
                         <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </button>
 
-                    <button className="px-8 py-4 glass rounded-lg font-semibold text-white hover:bg-white/10 transition-all duration-300 border border-white/20">
+                    <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 glass rounded-lg font-semibold text-white hover:bg-white/10 transition-all duration-300 border border-white/20">
                         자세히 알아보기
                     </button>
                 </motion.div>

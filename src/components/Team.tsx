@@ -66,38 +66,38 @@ export default function Team() {
                                 className="group"
                                 whileHover={{ y: -8 }}
                             >
-                                <div className="glass-strong p-8 rounded-2xl text-center h-full hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden">
+                                <div className="glass-strong p-6 md:p-8 rounded-2xl text-center h-full hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden">
                                     {/* Gradient background on hover */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                     <div className="relative z-10">
-                                        <div className="text-8xl mb-4 animate-float">{member.image}</div>
-                                        <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-                                        <p className="text-blue-400 text-sm mb-3">{member.role}</p>
-                                        <p className="text-muted-foreground text-sm mb-6">{member.bio}</p>
+                                        <div className="text-6xl md:text-8xl mb-3 md:mb-4 animate-float">{member.image}</div>
+                                        <h3 className="text-lg md:text-xl font-bold text-white mb-1">{member.name}</h3>
+                                        <p className="text-blue-400 text-xs md:text-sm mb-2 md:mb-3">{member.role}</p>
+                                        <p className="text-muted-foreground text-xs md:text-sm mb-4 md:mb-6">{member.bio}</p>
 
                                         {/* Social links */}
-                                        <div className="flex justify-center gap-3">
+                                        <div className="flex justify-center gap-2 md:gap-3">
                                             <a
                                                 href={member.social.twitter}
-                                                className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"
+                                                className="w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"
                                                 aria-label="Twitter"
                                             >
-                                                <Twitter className="w-4 h-4 text-white" />
+                                                <Twitter className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                                             </a>
                                             <a
                                                 href={member.social.linkedin}
-                                                className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"
+                                                className="w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"
                                                 aria-label="LinkedIn"
                                             >
-                                                <Linkedin className="w-4 h-4 text-white" />
+                                                <Linkedin className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                                             </a>
                                             <a
                                                 href={member.social.github}
-                                                className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"
+                                                className="w-8 h-8 md:w-10 md:h-10 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"
                                                 aria-label="GitHub"
                                             >
-                                                <Github className="w-4 h-4 text-white" />
+                                                <Github className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
                                             </a>
                                         </div>
                                     </div>

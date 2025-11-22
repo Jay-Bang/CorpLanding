@@ -80,50 +80,47 @@ export default function Pricing() {
                         {plans.map((plan, index) => (
                             <motion.div
                                 key={index}
-                                variants={fadeIn}
-                                className="relative"
-                                whileHover={{ y: plan.highlighted ? 0 : -8 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className={`glass-strong p-6 md:p-8 rounded-2xl relative ${plan.highlighted
+                                    ? "border-2 border-blue-500 md:scale-105 bg-blue-500/5"
+                                    : ""
+                                    }`}
                             >
                                 {plan.badge && (
-                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                                        <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold px-4 py-1 rounded-full">
-                                            {plan.badge}
+                                    <div className="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2">
+                                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 md:px-4 py-1 rounded-full text-xs md:text-sm font-semibold">
+                                            인기
                                         </span>
                                     </div>
                                 )}
 
-                                <div
-                                    className={`h-full p-8 rounded-3xl transition-all duration-300 ${plan.highlighted
-                                            ? "glass-strong border-2 border-blue-500/50 shadow-2xl shadow-blue-500/20 scale-105"
-                                            : "glass border border-white/10 hover:border-blue-500/30"
+                                <div className="text-center mb-6 md:mb-8">
+                                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                                    <div className="text-3xl md:text-4xl font-bold text-gradient mb-1 md:mb-2">
+                                        {plan.price}
+                                    </div>
+                                    <p className="text-xs md:text-sm text-muted-foreground">{plan.period}</p>
+                                </div>
+
+                                <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                                    {plan.features.map((feature, i) => (
+                                        <li key={i} className="flex items-start gap-2 md:gap-3">
+                                            <Check className="w-4 h-4 md:w-5 md:h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-sm md:text-base text-muted-foreground">{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <button
+                                    className={`w-full py-3 md:py-4 rounded-lg font-semibold transition-all duration-300 ${plan.highlighted
+                                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105"
+                                        : "glass text-white hover:bg-white/10 border border-white/20"
                                         }`}
                                 >
-                                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                                    <p className="text-muted-foreground text-sm mb-6">{plan.description}</p>
-
-                                    <div className="mb-8">
-                                        <span className="text-5xl font-bold text-gradient">{plan.price}</span>
-                                        <span className="text-muted-foreground">{plan.period}</span>
-                                    </div>
-
-                                    <ul className="space-y-4 mb-8">
-                                        {plan.features.map((feature, i) => (
-                                            <li key={i} className="flex items-start gap-3">
-                                                <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                                <span className="text-white">{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-
-                                    <button
-                                        className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${plan.highlighted
-                                                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105"
-                                                : "glass text-white hover:bg-white/10"
-                                            }`}
-                                    >
-                                        시작하기
-                                    </button>
-                                </div>
+                                    시작하기
+                                </button>
                             </motion.div>
                         ))}
                     </div>

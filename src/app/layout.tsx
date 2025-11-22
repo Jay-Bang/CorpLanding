@@ -16,14 +16,48 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-    title: "CorpLanding - Premium Corporate Solutions",
+    metadataBase: new URL("https://corplanding.com"),
+    title: {
+        default: "CorpLanding - Premium Corporate Solutions",
+        template: "%s | CorpLanding",
+    },
     description: "개혁적인 비즈니스 솔루션으로 미래를 만들어갑니다. 혁신, 품질, 성공을 약속합니다.",
-    keywords: ["corporate", "business", "solutions", "innovation", "technology"],
-    authors: [{ name: "CorpLanding" }],
+    keywords: ["corporate", "business", "solutions", "innovation", "technology", "consulting", "development"],
+    authors: [{ name: "CorpLanding Team" }],
+    creator: "CorpLanding",
     openGraph: {
+        type: "website",
+        locale: "ko_KR",
+        url: "https://corplanding.com",
+        title: "CorpLanding - Premium Corporate Solutions",
+        description: "개혁적인 비즈니스 솔루션으로 미래를 만들어갑니다. 혁신, 품질, 성공을 약속합니다.",
+        siteName: "CorpLanding",
+        images: [
+            {
+                url: "/og-image.jpg",
+                width: 1200,
+                height: 630,
+                alt: "CorpLanding Preview",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
         title: "CorpLanding - Premium Corporate Solutions",
         description: "개혁적인 비즈니스 솔루션으로 미래를 만들어갑니다.",
-        type: "website",
+        images: ["/og-image.jpg"],
+        creator: "@corplanding",
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
     },
 };
 
