@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { fadeIn, slideUp, staggerContainer } from "@/lib/animations";
+import ShinyText from "./ShinyText";
+import BlurText from "./BlurText";
 
 export default function Hero() {
     return (
@@ -28,9 +30,20 @@ export default function Hero() {
                     variants={slideUp}
                     className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 leading-tight px-4"
                 >
-                    <span className="text-gradient">미래를 만드는</span>
+                    <BlurText
+                        text="미래를 만드는"
+                        className="text-gradient inline-flex justify-center"
+                        delay={150}
+                        animateBy="words"
+                        direction="top"
+                    />
                     <br />
-                    <span className="text-white">비즈니스 솔루션</span>
+                    <ShinyText
+                        text="비즈니스 솔루션"
+                        disabled={false}
+                        speed={3}
+                        className="text-white inline-block"
+                    />
                 </motion.h1>
 
                 <motion.p
